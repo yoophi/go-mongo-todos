@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+    mongodb:
+        image: mongo:6.0
+        restart: always
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: admin
+            MONGO_INITDB_ROOT_PASSWORD: admin
+        command: --auth --nojournal # --setParameter notablescan=1
+        ports:
+            - "27017:27017"
